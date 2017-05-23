@@ -1363,11 +1363,11 @@
         },
         {
           "Name": "Parameters",
-          "Type": "CloudFormation Stack Parameters Property Type",
+          "Type": "AWS CloudFormation Stack Parameters",
           "TypeHref": "aws-properties-stack-parameters.html",
           "TypeName": "",
           "DocString": "The set of parameters passed to AWS CloudFormation when this nested\nstack is created.",
-          "SyntaxExpression": "{ CloudFormation Stack Parameters Property Type }"
+          "SyntaxExpression": "{ AWS CloudFormation Stack Parameters }"
         },
         {
           "Name": "Tags",
@@ -1991,6 +1991,456 @@
           "TypeName": "",
           "DocString": "Defines the AWS CodePipeline pipeline stages.",
           "SyntaxExpression": "["
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::IdentityPool",
+      "Href": "aws-resource-cognito-identitypool.html",
+      "Properties": [
+        {
+          "Name": "IdentityPoolName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of your Amazon Cognito identity pool.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "AllowUnauthenticatedIdentities",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies whether the identity pool supports unauthenticated logins.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "DeveloperProviderName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The \"domain\" by which Amazon Cognito will refer to your users. This\nname acts as a placeholder that allows your backend and the Amazon\nCognito service to communicate about the developer provider. For the\nDeveloperProviderName, you can use letters and periods (.),\nunderscores (_), and dashes (-).",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SupportedLoginProviders",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Key-value pairs that map provider names to provider app IDs.",
+          "SyntaxExpression": "{ String:String, ... }"
+        },
+        {
+          "Name": "CognitoIdentityProviders",
+          "Type": "An array of Amazon Cognito IdentityPool CognitoIdentityProvider",
+          "TypeHref": "aws-properties-cognito-identitypool-cognitoidentityprovider.html",
+          "TypeName": "",
+          "DocString": "An array of Amazon Cognito user pools and their client IDs.",
+          "SyntaxExpression": "[ Amazon Cognito IdentityPool CognitoIdentityProvider ]"
+        },
+        {
+          "Name": "SamlProviderARNs",
+          "Type": "List of strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A list of Amazon Resource Names (ARNs) of Security Assertion Markup\nLanguage (SAML) providers.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "OpenIdConnectProviderARNs",
+          "Type": "List of strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A list of ARNs for the OpendID Connect provider.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "CognitoStreams",
+          "Type": "Amazon Cognito IdentityPool CognitoStreams",
+          "TypeHref": "aws-properties-cognito-identitypool-cognitostreams.html",
+          "TypeName": "",
+          "DocString": "Configuration options for configuring Amazon Cognito streams.",
+          "SyntaxExpression": "CognitoStreams"
+        },
+        {
+          "Name": "PushSync",
+          "Type": "Amazon Cognito IdentityPool PushSync",
+          "TypeHref": "aws-properties-cognito-identitypool-pushsync.html",
+          "TypeName": "",
+          "DocString": "Configuration options to be applied to the identity pool.",
+          "SyntaxExpression": "PushSync"
+        },
+        {
+          "Name": "CognitoEvents",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The events to configure.",
+          "SyntaxExpression": "{ String:String, ... }"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::IdentityPoolRoleAttachment",
+      "Href": "aws-resource-cognito-identitypoolroleattachment.html",
+      "Properties": [
+        {
+          "Name": "IdentityPoolId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "An identity pool ID in the format REGION:GUID.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "RoleMappings",
+          "Type": "String to Amazon Cognito IdentityPoolRoleAttachment RoleMapping object map",
+          "TypeHref": "aws-properties-cognito-identitypoolroleattachment-rolemapping.html",
+          "TypeName": "",
+          "DocString": "How users for a specific identity provider are to mapped to roles.\nThis is a string to RoleMapping object map. The string identifies the\nidentity provider, for example, \"graph.facebook.com\" or\n\"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\"",
+          "SyntaxExpression": "String to RoleMapping object map"
+        },
+        {
+          "Name": "Roles",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The map of roles associated with this pool. For a given role, the key\nwill be either \"authenticated\" or \"unauthenticated\" and the value will\nbe the Role ARN.",
+          "SyntaxExpression": "{ String:String, ... }"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::UserPool",
+      "Href": "aws-resource-cognito-userpool.html",
+      "Properties": [
+        {
+          "Name": "AdminCreateUserConfig",
+          "Type": "Amazon Cognito UserPool AdminCreateUserConfig",
+          "TypeHref": "aws-properties-cognito-userpool-admincreateuserconfig.html",
+          "TypeName": "",
+          "DocString": "The type of configuration for creating a new user profile.",
+          "SyntaxExpression": "AdminCreateUserConfig"
+        },
+        {
+          "Name": "AliasAttributes",
+          "Type": "Array of Strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Attributes supported as an alias for this user pool. Possible values:\nphone_number, email, and/or preferred_username.",
+          "SyntaxExpression": "[ String ]"
+        },
+        {
+          "Name": "AutoVerifiedAttributes",
+          "Type": "Array of Strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The attributes to be auto-verified. Possible values: email and/or\nphone_number.",
+          "SyntaxExpression": "[ String ]"
+        },
+        {
+          "Name": "DeviceConfiguration",
+          "Type": "Amazon Cognito UserPool DeviceConfiguration",
+          "TypeHref": "aws-properties-cognito-userpool-deviceconfiguration.html",
+          "TypeName": "",
+          "DocString": "The type of configuration for the user pool's device tracking.",
+          "SyntaxExpression": "DeviceConfiguration"
+        },
+        {
+          "Name": "EmailConfiguration",
+          "Type": "Amazon Cognito UserPool EmailConfiguration",
+          "TypeHref": "aws-properties-cognito-userpool-emailconfiguration.html",
+          "TypeName": "",
+          "DocString": "The email configuration.",
+          "SyntaxExpression": "EmailConfiguration"
+        },
+        {
+          "Name": "EmailVerificationMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A string representing the email verification message. Must contain\n{####} in the description.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "EmailVerificationSubject",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A string representing the email verification subject.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "LambdaConfig",
+          "Type": "Amazon Cognito UserPool LambdaConfig",
+          "TypeHref": "aws-properties-cognito-userpool-lambdaconfig.html",
+          "TypeName": "",
+          "DocString": "The AWS Lambda trigger configuration information for the Amazon\nCognito user pool.",
+          "SyntaxExpression": "LambdaConfig"
+        },
+        {
+          "Name": "MfaConfiguration",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies multi-factor authentication (MFA) configuration details. Can\nbe one of the following values:",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Policies",
+          "Type": "Amazon Cognito UserPool Policies",
+          "TypeHref": "aws-properties-cognito-userpool-policies.html",
+          "TypeName": "",
+          "DocString": "The policies associated with the Amazon Cognito user pool.",
+          "SyntaxExpression": "Policies"
+        },
+        {
+          "Name": "UserPoolName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A string used to name the user pool.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Schema",
+          "Type": "Array of SchemaAttribute objects",
+          "TypeHref": "aws-properties-cognito-userpool-schemaattribute.html",
+          "TypeName": "",
+          "DocString": "An array of schema attributes for the new user pool. These attributes\ncan be standard or custom attributes.",
+          "SyntaxExpression": "[ SchemaAttribute ]"
+        },
+        {
+          "Name": "SmsAuthenticationMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A string representing the SMS authentication message. Must contain\n{####} in the message.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SmsConfiguration",
+          "Type": "Amazon Cognito UserPool SmsConfiguration",
+          "TypeHref": "aws-properties-cognito-userpool-smsconfiguration.html",
+          "TypeName": "",
+          "DocString": "The Short Message Service (SMS) configuration.",
+          "SyntaxExpression": "SmsConfiguration"
+        },
+        {
+          "Name": "SmsVerificationMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A string representing the SMS verification message. Must contain\n{####} in the message.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "UserPoolTags",
+          "Type": "String to String map",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The cost allocation tags for the user pool. For more information, see\nAdding Cost Allocation Tags to Your User Pool in the Amazon Cognito\nDeveloper Guide.",
+          "SyntaxExpression": "{ String:String, ... }"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::UserPoolClient",
+      "Href": "aws-resource-cognito-userpoolclient.html",
+      "Properties": [
+        {
+          "Name": "ClientName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The client name for the user pool client that you want to create.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "ExplicitAuthFlows",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The explicit authentication flows, which can be one of the following:\nADMIN_NO_SRP_AUTH or CUSTOM_AUTH_FLOW_ONLY.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "GenerateSecret",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies whether you want to generate a secret for the user pool\nclient being created.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "ReadAttributes",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The read attributes.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "RefreshTokenValidity",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The time limit, in days, after which the refresh token is no longer\nvalid.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "UserPoolId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user pool ID for the user pool where you want to create a client.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "WriteAttributes",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The write attributes.",
+          "SyntaxExpression": "[ String, ... ]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::UserPoolGroup",
+      "Href": "aws-resource-cognito-userpoolgroup.html",
+      "Properties": [
+        {
+          "Name": "Description",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A description of the user group.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "GroupName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the user group. GroupName must be unique.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Precedence",
+          "Type": "Number",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A nonnegative integer value that specifies the precedence of this\ngroup relative to the other groups that a user can belong to in the\nuser pool. Zero is the highest Precedence value. Groups with lower\nPrecedence values take precedence over groups with higher or null\nPrecedence values. If a user belongs to two or more groups, the role\nARN of the group with the lowest precedence value is used in the\ncognito:roles and cognito:preferred_role claims in the user's tokens.",
+          "SyntaxExpression": "Number"
+        },
+        {
+          "Name": "RoleArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The role ARN for the group.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "UserPoolId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user pool ID.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::UserPoolUser",
+      "Href": "aws-resource-cognito-userpooluser.html",
+      "Properties": [
+        {
+          "Name": "DesiredDeliveryMediums",
+          "Type": "List of strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies how the welcome message will be sent. For email, specify\nEMAIL. To use a phone number, specify SMS. You can specify more than\none value. The default value is SMS.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "ForceAliasCreation",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Use this parameter only if the phone_number_verified attribute or the\nemail_verified attribute is set to True. Otherwise, it is ignored. The\ndefault value is False.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "UserAttributes",
+          "Type": "Array of Amazon Cognito UserPoolUser AttributeType",
+          "TypeHref": "aws-properties-cognito-userpooluser-attributetype.html",
+          "TypeName": "",
+          "DocString": "An array of name-value pairs that contain user attributes and\nattribute values to be set for the user that you are creating. You can\ncreate a user without specifying any attributes other than Username.\nHowever, any attributes that you specify as required (in\nCreateUserPool or in the Attributes tab of the console) must be\nsupplied either by you (in your call to AdminCreateUser) or by the\nuser (when signing up in response to your welcome message).",
+          "SyntaxExpression": "[ AttributeType, ... ]"
+        },
+        {
+          "Name": "MessageAction",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies the action you'd like to take for the message. Valid values\nare RESEND and SUPPRESS.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Username",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user name for the user. Username must be unique within the user\npool. It must be a UTF-8 string between 1 and 128 characters. You\ncan't change the username.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "UserPoolId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The ID for the user pool where the user will be created.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "ValidationData",
+          "Type": "Array of Amazon Cognito UserPoolUser AttributeType",
+          "TypeHref": "aws-properties-cognito-userpooluser-attributetype.html",
+          "TypeName": "",
+          "DocString": "The user's validation data. This is an array of name-value pairs that\ncontain user attributes and attribute values that you can use for\ncustom validation, such as restricting the types of user accounts that\ncan be registered. For example, you might choose to allow or disallow\nuser sign-up based on the user's domain.",
+          "SyntaxExpression": "[ AttributeType, ...]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::Cognito::UserPoolUserToGroupAttachment",
+      "Href": "aws-resource-cognito-userpoolusertogroupattachment.html",
+      "Properties": [
+        {
+          "Name": "GroupName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the group.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Username",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user's user name.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "UserPoolId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The ID of the user pool.",
+          "SyntaxExpression": "String"
         }
       ]
     },
@@ -3217,11 +3667,19 @@
       "Href": "aws-properties-ec2-security-group.html",
       "Properties": [
         {
+          "Name": "GroupName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the security group. For valid values, see the GroupName\nparameter of the CreateSecurityGroup action in the Amazon EC2 API\nReference.",
+          "SyntaxExpression": "String"
+        },
+        {
           "Name": "GroupDescription",
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "Description of the security group.",
+          "DocString": "A description of the security group.",
           "SyntaxExpression": "String"
         },
         {
@@ -3253,7 +3711,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The physical ID of the VPC. Can be obtained by using a reference to an\nAWS::EC2::VPC, such as: { \"Ref\" : \"myVPC\" }.",
+          "DocString": "The physical ID of the VPC. You can obtain the physical ID by using a\nreference to an AWS::EC2::VPC, such as: { \"Ref\" : \"myVPC\" }.",
           "SyntaxExpression": "String"
         }
       ]
@@ -4009,7 +4467,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The name or Amazon Resource Name (ARN) of the cluster that you want to\nrun your service on. If you do not specify a cluster, Amazon ECS uses\nthe default cluster.",
+          "DocString": "The name or Amazon Resource Name (ARN) of the cluster that you want to\nrun your Amazon ECS service on. If you do not specify a cluster,\nAmazon ECS uses the default cluster.",
           "SyntaxExpression": "String"
         },
         {
@@ -4021,11 +4479,27 @@
           "SyntaxExpression": "DeploymentConfiguration"
         },
         {
+          "Name": "PlacementConstraints",
+          "Type": "Amazon EC2 Container Service Service PlacementConstraint",
+          "TypeHref": "aws-properties-ecs-service-placementconstraints-placementconstraint.html",
+          "TypeName": "",
+          "DocString": "The placement constraints for the tasks in the service.",
+          "SyntaxExpression": "[ PlacementConstraints, ... ]"
+        },
+        {
+          "Name": "PlacementStrategies",
+          "Type": "Amazon EC2 Container Service Service PlacementStrategies",
+          "TypeHref": "aws-properties-ecs-service-placementstrategies-placementstrategy.html",
+          "TypeName": "",
+          "DocString": "The placement strategies that determine how tasks for the service are\nplaced.",
+          "SyntaxExpression": "[ PlacementStrategies, ... ]"
+        },
+        {
           "Name": "DesiredCount",
           "Type": "Integer",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The number of simultaneous tasks that you want to run on the cluster.\nSpecify the tasks with the TaskDefinition property,",
+          "DocString": "The number of simultaneous tasks that you want to run on the cluster.\nSpecify the tasks with the TaskDefinition property.",
           "SyntaxExpression": "Integer"
         },
         {
@@ -4033,7 +4507,7 @@
           "Type": "List of Amazon EC2 Container Service Service LoadBalancers",
           "TypeHref": "aws-properties-ecs-service-loadbalancers.html",
           "TypeName": "",
-          "DocString": "A list of load balancer objects to associate with the cluster. For\ninformation about the number of load balancers you can specify per\nservice, see Service Load Balancing in the Amazon EC2 Container\nService Developer Guide.",
+          "DocString": "A list of load balancer objects to associate with the cluster. For\ninformation about the number of load balancers that you can specify\nper service, see Service Load Balancing in the Amazon EC2 Container\nService Developer Guide.",
           "SyntaxExpression": "[ Load Balancer Objects, ... ]"
         },
         {
@@ -4042,6 +4516,14 @@
           "TypeHref": "",
           "TypeName": "",
           "DocString": "The name or ARN of an AWS Identity and Access Management (IAM) role\nthat allows your Amazon ECS container agent to make calls to your load\nbalancer.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "ServiceName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of your service. The name is limited to 255 letters\n(uppercase and lowercase), numbers, hyphens, and underscores. Service\nnames must be unique within a cluster, but you can have similarly\nnamed services in multiple clusters within a region or across multiple\nregions.",
           "SyntaxExpression": "String"
         },
         {
@@ -4063,7 +4545,7 @@
           "Type": "List of Amazon EC2 Container Service TaskDefinition Volumes",
           "TypeHref": "aws-properties-ecs-taskdefinition-volumes.html",
           "TypeName": "",
-          "DocString": "A list of volume definitions in JSON format for volumes that you can\nuse in your container definitions.",
+          "DocString": "A list of volume definitions in JSON format for the volumes that you\ncan use in your container definitions.",
           "SyntaxExpression": "["
         },
         {
@@ -4091,11 +4573,19 @@
           "SyntaxExpression": "String"
         },
         {
+          "Name": "PlacementConstraints",
+          "Type": "Amazon EC2 Container Service Service PlacementConstraint",
+          "TypeHref": "aws-properties-ecs-taskdefinition-placementconstraints-taskdefinitionplacementconstraint.html",
+          "TypeName": "",
+          "DocString": "The placement constraints for the tasks in the service.",
+          "SyntaxExpression": "TaskDefinitionPlacementConstraint"
+        },
+        {
           "Name": "ContainerDefinitions",
           "Type": "List of Amazon EC2 Container Service TaskDefinition ContainerDefinitions",
           "TypeHref": "aws-properties-ecs-taskdefinition-containerdefinitions.html",
           "TypeName": "",
-          "DocString": "A list of container definitions in JSON format that describe the\ncontainers that make up your task.",
+          "DocString": "A list of container definitions in JSON format that describes the\ncontainers that make up your task.",
           "SyntaxExpression": "["
         }
       ]
@@ -4389,7 +4879,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The compute and memory capacity of nodes in the node group. To see\nvalid values, see CreateReplicationGroup in the Amazon ElastiCache API\nReference Guide.",
+          "DocString": "The compute and memory capacity of nodes in the node group. For valid\nvalues, see CreateReplicationGroup in the Amazon ElastiCache API\nReference Guide.",
           "SyntaxExpression": "String"
         },
         {
@@ -4477,7 +4967,7 @@
           "Type": "List of strings",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "A list of Availability Zones (AZs) in which the cache clusters in this\nreplication group are created.",
+          "DocString": "A list of Availability Zones in which the cache clusters in this\nreplication group are created.",
           "SyntaxExpression": "[ String, ... ]"
         },
         {
@@ -4509,7 +4999,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The description of the replication group.",
+          "DocString": "A description of the replication group.",
           "SyntaxExpression": "String"
         },
         {
@@ -4565,7 +5055,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The time range (in UTC) when ElastiCache takes a daily snapshot of\nyour node group that you specified in the SnapshottingClusterId\nproperty. For example, you can specify 05:00-09:00.",
+          "DocString": "The time range (in UTC) when ElastiCache takes a daily snapshot of the\nnode group that you specified in the SnapshottingClusterId property.\nFor example, you can specify 05:00-09:00.",
           "SyntaxExpression": "String"
         },
         {
@@ -5121,6 +5611,14 @@
           "TypeName": "",
           "DocString": "Specifies an arbitrary set of tags (key–value pairs) to associate\nwith this load balancer. Use tags to manage your resources.",
           "SyntaxExpression": "["
+        },
+        {
+          "Name": "IpAddressType",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of IP addresses that are used by the load balancer's subnets,\nsuch as ipv4 (for IPv4 addresses) or dualstack (for IPv4 and IPv6\naddresses). For valid values, see the IpAddressType parameter for the\nCreateLoadBalancer action in the Elastic Load Balancing API Reference\nversion 2015-12-01.",
+          "SyntaxExpression": "String"
         }
       ]
     },
@@ -5341,6 +5839,14 @@
           "SyntaxExpression": "[ Applications, ... ]"
         },
         {
+          "Name": "AutoScalingRole",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "An AWS Identity and Access Management (IAM) role for automatic scaling\npolicies. The default role is EMR_AutoScaling_DefaultRole. The IAM\nrole provides permissions that the automatic scaling feature requires\nto launch and terminate Amazon EC2 instances in an instance group.",
+          "SyntaxExpression": "String"
+        },
+        {
           "Name": "BootstrapActions",
           "Type": "List of Amazon EMR Cluster BootstrapActionConfig",
           "TypeHref": "aws-properties-emr-cluster-bootstrapactionconfig.html",
@@ -5394,6 +5900,14 @@
           "TypeHref": "",
           "TypeName": "",
           "DocString": "The Amazon EMR software release label. A release is a set of software\napplications and components that you can install and configure on an\nAmazon EMR cluster. For more information, see About Amazon EMR\nReleases in the Amazon EMR Release Guide.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SecurityConfiguration",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the security configuration applied to the cluster.",
           "SyntaxExpression": "String"
         },
         {
@@ -5861,7 +6375,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "A description of the policy. For example, you can describe the\npermissions that are defined in the policy.",
+          "DocString": "A description of the IAM policy. For example, describe the permissions\nthat are defined in the policy.",
           "SyntaxExpression": "Policy for creating a test database"
         },
         {
@@ -5869,7 +6383,7 @@
           "Type": "List of strings",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The names of groups to attach to this policy.",
+          "DocString": "The names of IAM groups to attach to this policy.",
           "SyntaxExpression": "[\"TestDBGroup\"]"
         },
         {
@@ -5877,7 +6391,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The path for the policy. By default, the path is /. For more\ninformation, see IAM Identifiers in the IAM User Guide guide.",
+          "DocString": "The path for the IAM policy. By default, the path is /. For more\ninformation, see IAM Identifiers in the IAM User Guide.",
           "SyntaxExpression": "/"
         },
         {
@@ -5893,7 +6407,7 @@
           "Type": "List of strings",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The names of roles to attach to this policy.",
+          "DocString": "The names of IAM roles to attach to this policy.",
           "SyntaxExpression": "[ String, ... ]"
         },
         {
@@ -5903,6 +6417,14 @@
           "TypeName": "",
           "DocString": "The names of users to attach to this policy.",
           "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "ManagedPolicyName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A custom, friendly name for your IAM managed policy. For valid values,\nsee the PolicyName parameter of the CreatePolicy action in the IAM API\nReference.",
+          "SyntaxExpression": "String"
         }
       ]
     },
@@ -6512,11 +7034,19 @@
         },
         {
           "Name": "VpcConfig",
-          "Type": "AWS Lambda Function VPCConfig",
+          "Type": "AWS Lambda Function VpcConfig",
           "TypeHref": "aws-properties-lambda-function-vpcconfig.html",
           "TypeName": "",
           "DocString": "If the Lambda function requires access to resources in a VPC, specify\na VPC configuration that Lambda uses to set up an elastic network\ninterface (ENI). The ENI enables your function to connect to other\nresources in your VPC, but it doesn't provide public Internet access.\nIf your function requires Internet access (for example, to access AWS\nservices that don't have VPC endpoints), configure a Network Address\nTranslation (NAT) instance inside your VPC or use an Amazon Virtual\nPrivate Cloud (Amazon VPC) NAT gateway. For more information, see NAT\nGateways in the Amazon VPC User Guide.",
           "SyntaxExpression": "VPCConfig"
+        },
+        {
+          "Name": "Tags",
+          "Type": "AWS CloudFormation Resource Tags",
+          "TypeHref": "aws-properties-resource-tags.html",
+          "TypeName": "",
+          "DocString": "An arbitrary set of tags (key–value pairs) for this Lambda function.",
+          "SyntaxExpression": "[ Resource Tag, ... ]"
         }
       ]
     },
@@ -7409,8 +7939,16 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The public SSH key that is associated with the IAM user. The IAM user\nmust have or be given the corresponding private key to access\ninstances.",
+          "DocString": "The public SSH key that is associated with the IAM user. To access\ninstances, the IAM user must have or be given the corresponding\nprivate key.",
           "SyntaxExpression": "xyz1234567890"
+        },
+        {
+          "Name": "SshUsername",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user's SSH user name.",
+          "SyntaxExpression": "String"
         }
       ]
     },
@@ -8195,7 +8733,7 @@
           "Type": "Boolean",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "When a new version of the Amazon Redshift is released, tells whether\nupgrades can be applied to the engine that is running on the cluster.\nThe upgrades are applied during the maintenance window.",
+          "DocString": "When a new version of Amazon Redshift is released, tells whether\nupgrades can be applied to the engine that is running on the cluster.\nThe upgrades are applied during the maintenance window.",
           "SyntaxExpression": "Boolean"
         },
         {
@@ -8203,7 +8741,7 @@
           "Type": "Integer",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The number of days that automated snapshots are retained. If you set\nthe value to 0, automated snapshots are disabled.",
+          "DocString": "The number of days that automated snapshots are retained. To disable\nautomated snapshots, set the value to 0.",
           "SyntaxExpression": "Integer"
         },
         {
@@ -8211,7 +8749,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The Amazon Elastic Compute Cloud (Amazon EC2) Availability Zone in\nwhich you want to provision your Amazon Redshift cluster. For example,\nif you have several EC2 instances running in a specific Availability\nZone, you might want the cluster to be provisioned in the same zone in\norder to decrease network latency.",
+          "DocString": "The Amazon Elastic Compute Cloud (Amazon EC2) Availability Zone in\nwhich you want to provision your Amazon Redshift cluster. For example,\nif you have several EC2 instances running in a specific Availability\nZone, you might want the cluster to be provisioned in the same zone to\ndecrease network latency.",
           "SyntaxExpression": "String"
         },
         {
@@ -8243,7 +8781,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The type of cluster. You can specify single-node or multi-node.",
+          "DocString": "The type of cluster. Specify single-node or multi-node.",
           "SyntaxExpression": "single-node"
         },
         {
@@ -8251,7 +8789,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The Amazon Redshift engine version that you want to deploy on the\ncluster.",
+          "DocString": "The version of the Amazon Redshift engine that you want to deploy on\nthe cluster.",
           "SyntaxExpression": "String"
         },
         {
@@ -8283,7 +8821,7 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "Specifies the name of the HSM client certificate that the Amazon\nRedshift cluster uses to retrieve the data encryption keys stored in\nan HSM.",
+          "DocString": "Specifies the name of the hardware security module (HSM) client\ncertificate that the Amazon Redshift cluster uses to retrieve the data\nencryption keys stored in an HSM.",
           "SyntaxExpression": "String"
         },
         {
@@ -8291,15 +8829,23 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "Specifies the name of the hardware security module (HSM) configuration\nthat contains the information that the Amazon Redshift cluster can use\nto retrieve and store keys in an HSM.",
+          "DocString": "The name of the HSM configuration that contains the information that\nthe Amazon Redshift cluster can use to retrieve and store keys in an\nHSM.",
           "SyntaxExpression": "String"
+        },
+        {
+          "Name": "IamRoles",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A list of AWS Identity and Access Management (IAM) roles that the\ncluster can use to access other AWS services. Supply the IAM roles by\ntheir Amazon Resource Name (ARN). You can supply a maximum of ten IAM\nroles in a single request. A cluster can have a maximum of ten IAM\nroles associated with it at a time.",
+          "SyntaxExpression": "[ String, ... ]"
         },
         {
           "Name": "KmsKeyId",
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The AWS Key Management Service (AWS KMS) key ID that you want to use\nto encrypt data in the cluster.",
+          "DocString": "The ID of the AWS Key Management Service (AWS KMS) key that you want\nto use to encrypt data in the cluster.",
           "SyntaxExpression": "String"
         },
         {
@@ -8371,7 +8917,7 @@
           "Type": "",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "The name of the cluster the source snapshot was created from. For more\ninformation about restoring from a snapshot, see the\nRestoreFromClusterSnapshot action in the Amazon Redshift API\nReference.",
+          "DocString": "The name of the cluster that the source snapshot was created from. For\nmore information about restoring from a snapshot, see the\nRestoreFromClusterSnapshot action in the Amazon Redshift API\nReference.",
           "SyntaxExpression": "String"
         },
         {
@@ -9361,6 +9907,222 @@
       ]
     },
     {
+      "Name": "AWS::WAFRegional::ByteMatchSet",
+      "Href": "aws-resource-wafregional-bytematchset.html",
+      "Properties": [
+        {
+          "Name": "ByteMatchTuples",
+          "Type": "List of AWS WAF Regional ByteMatchSet ByteMatchTuples",
+          "TypeHref": "aws-properties-wafregional-bytematchset-bytematchtuples.html",
+          "TypeName": "",
+          "DocString": "Settings for the ByteMatchSet, such as the bytes (typically a string\nthat corresponds with ASCII characters) that you want AWS WAF to\nsearch for in web requests.",
+          "SyntaxExpression": "[ Byte match tuple, ... ]"
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description of the ByteMatchSet.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::IPSet",
+      "Href": "aws-resource-wafregional-ipset.html",
+      "Properties": [
+        {
+          "Name": "IPSetDescriptors",
+          "Type": "List of AWS WAF Regional IPSet IPSetDescriptors",
+          "TypeHref": "aws-properties-wafregional-ipset-ipsetdescriptors.html",
+          "TypeName": "",
+          "DocString": "The IP address type and IP address range (in CIDR notation) from which\nweb requests originate. If you associate the IPSet with a web ACL that\nis associated with a Amazon CloudFront (CloudFront) distribution, this\ndescriptor is the value of one of the following fields in the\nCloudFront access logs:",
+          "SyntaxExpression": "[ IPSet descriptor, ... ]"
+        },
+        {
+          "Name": "c-ip",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If the viewer did not use an HTTP proxy or a load balancer to send the\nrequest",
+          "SyntaxExpression": ""
+        },
+        {
+          "Name": "x-forwarded-for",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If the viewer did use an HTTP proxy or a load balancer to send the\nrequest",
+          "SyntaxExpression": ""
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description of the IPSet.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::Rule",
+      "Href": "aws-resource-wafregional-rule.html",
+      "Properties": [
+        {
+          "Name": "MetricName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description for the metrics of the rule. For valid\nvalues, see the MetricName parameter for the CreateRule action in the\nAWS WAF Regional API Reference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description of the rule.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Predicates",
+          "Type": "List of AWS WAF Regional Rule Predicates",
+          "TypeHref": "aws-properties-wafregional-rule-predicates.html",
+          "TypeName": "",
+          "DocString": "The ByteMatchSet, IPSet, SizeConstraintSet, SqlInjectionMatchSet, or\nXssMatchSet objects to include in a rule. If you add more than one\npredicate to a rule, a request must match all conditions in order to\nbe allowed or blocked.",
+          "SyntaxExpression": "[ Predicate, ... ]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::SizeConstraintSet",
+      "Href": "aws-resource-wafregional-sizeconstraintset.html",
+      "Properties": [
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description for the SizeConstraintSet.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SizeConstraints",
+          "Type": "List of AWS WAF Regional SizeConstraintSet SizeConstraint",
+          "TypeHref": "aws-properties-wafregional-sizeconstraintset-sizeconstraint.html",
+          "TypeName": "",
+          "DocString": "The size constraint and the part of the web request to check.",
+          "SyntaxExpression": "[ SizeConstraint, ... ]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::SqlInjectionMatchSet",
+      "Href": "aws-resource-wafregional-sqlinjectionmatchset.html",
+      "Properties": [
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description of the SqlInjectionMatchSet.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SqlInjectionMatchTuples",
+          "Type": "List of AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples",
+          "TypeHref": "aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples.html",
+          "TypeName": "",
+          "DocString": "The parts of web requests that you want AWS WAF to inspect for\nmalicious SQL code and, if you want AWS WAF to inspect a header, the\nname of the header.",
+          "SyntaxExpression": "[ SqlInjectionMatchTuple, ... ]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::WebACL",
+      "Href": "aws-resource-wafregional-webacl.html",
+      "Properties": [
+        {
+          "Name": "DefaultAction",
+          "Type": "AWS WAF Regional WebACL Action",
+          "TypeHref": "aws-properties-wafregional-webacl-action.html",
+          "TypeName": "",
+          "DocString": "The action that you want AWS WAF to take when a request doesn't match\nthe criteria in any of the rules that are associated with the web ACL.",
+          "SyntaxExpression": "Action"
+        },
+        {
+          "Name": "MetricName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description for the Amazon CloudWatch metric of\nthis web ACL. For valid values, see the MetricName parameter of the\nCreateWebACL action in the AWS WAF Regional API Reference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description of the web ACL.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Rules",
+          "Type": "List of AWS WAF Regional WebACL Rules",
+          "TypeHref": "aws-properties-wafregional-webacl-rules.html",
+          "TypeName": "",
+          "DocString": "The rules to associate with the web ACL and the settings for each\nrule.",
+          "SyntaxExpression": "[ Rule, ... ]"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::WebACLAssociation",
+      "Href": "aws-resource-wafregional-webaclassociation.html",
+      "Properties": [
+        {
+          "Name": "ResourceArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The Amazon Resource Name (ARN) of the resource to protect with the web\nACL.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "WebACLId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A unique identifier (ID) for the web ACL.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS::WAFRegional::XssMatchSet",
+      "Href": "aws-resource-wafregional-xssmatchset.html",
+      "Properties": [
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly name or description for the XssMatchSet.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "XssMatchTuples",
+          "Type": "List of AWS WAF Regional XssMatchSet XssMatchTuple",
+          "TypeHref": "aws-properties-wafregional-xssmatchset-xssmatchtuple.html",
+          "TypeName": "",
+          "DocString": "The parts of web requests that you want to inspect for cross-site\nscripting attacks.",
+          "SyntaxExpression": "[ XssMatchTuple, ... ]"
+        }
+      ]
+    },
+    {
       "Name": "AWS::WorkSpaces::Workspace",
       "Href": "aws-resource-workspaces-workspace.html",
       "Properties": [
@@ -10295,7 +11057,7 @@
       ]
     },
     {
-      "Name": "CloudFormation Stack Parameters Property Type",
+      "Name": "AWS CloudFormation Stack Parameters",
       "Href": "aws-properties-stack-parameters.html",
       "Properties": null
     },
@@ -11892,6 +12654,628 @@
       ]
     },
     {
+      "Name": "Amazon Cognito IdentityPool CognitoStreams",
+      "Href": "aws-properties-cognito-identitypool-cognitostreams.html",
+      "Properties": [
+        {
+          "Name": "RoleArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The Amazon Resource Name (ARN) of the role Amazon Cognito can assume\nto publish to the stream. This role must grant access to Amazon\nCognito (cognito-sync) to invoke PutRecord on your Amazon Cognito\nstream.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "StreamingStatus",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Status of the Cognito streams. Valid values are: ENABLED or DISABLED.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "StreamName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the Amazon Cognito stream to receive updates. This stream\nmust be in the developer's account and in the same region as the\nidentity pool.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito IdentityPool PushSync",
+      "Href": "aws-properties-cognito-identitypool-pushsync.html",
+      "Properties": [
+        {
+          "Name": "ApplicationArns",
+          "Type": "List of strings",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "List of Amazon SNS platform application ARNs that could be used by\nclients.",
+          "SyntaxExpression": "[ String, ... ]"
+        },
+        {
+          "Name": "RoleArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "An IAM role configured to allow Amazon Cognito to call SNS on behalf\nof the developer.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito IdentityPoolRoleAttachment RoleMapping",
+      "Href": "aws-properties-cognito-identitypoolroleattachment-rolemapping.html",
+      "Properties": [
+        {
+          "Name": "AmbiguousRoleResolution",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies the action to be taken if either no rules match the claim\nvalue for the Rules type, or there is no cognito:preferred_role claim\nand there are multiple cognito:roles matches for the Token type. If\nyou specify Token or Rules as the Type, AmbiguousRoleResolution is\nrequired.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "RulesConfiguration",
+          "Type": "Amazon Cognito IdentityPoolRoleAttachment RoleMapping RulesConfiguration",
+          "TypeHref": "aws-properties-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration.html",
+          "TypeName": "",
+          "DocString": "The rules to be used for mapping users to roles. If you specify Rules\nas the role mapping type, RulesConfiguration is required.",
+          "SyntaxExpression": "RulesConfiguration"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The role mapping type. Token will use cognito:roles and\ncognito:preferred_role claims from the Amazon Cognito identity\nprovider token to map groups to roles. Rules will attempt to match\nclaims from the token to map to a role.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito IdentityPoolRoleAttachment MappingRule",
+      "Href": "aws-properties-cognito-identitypoolroleattachment-mappingrule.html",
+      "Properties": [
+        {
+          "Name": "Claim",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The claim name that must be present in the token, for example,\n\"isAdmin\" or \"paid.\"",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MatchType",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The match condition that specifies how closely the claim value in the\nIdP token must match Value.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "RoleARN",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The Amazon Resource Name (ARN) of the role.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Value",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A brief string that the claim must match, for example, \"paid\" or\n\"yes.\"",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito IdentityPool CognitoIdentityProvider",
+      "Href": "aws-properties-cognito-identitypool-cognitoidentityprovider.html",
+      "Properties": [
+        {
+          "Name": "ClientId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The client ID for the Amazon Cognito user pool.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "ProviderName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The provider name for an Amazon Cognito user pool. For example,\ncognito-idp.us-east-2.amazonaws.com/us-east-2_123456789.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "ServerSideTokenCheck",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "TRUE if server-side token validation is enabled for the identity\nprovider’s token.",
+          "SyntaxExpression": "Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito IdentityPoolRoleAttachment RoleMapping RulesConfiguration",
+      "Href": "aws-properties-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration.html",
+      "Properties": [
+        {
+          "Name": "Rules",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "An array of rules. You can specify up to 25 rules per identity\nprovider.",
+          "SyntaxExpression": "Array of Amazon Cognito IdentityPoolRoleAttachment MappingRule"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool AdminCreateUserConfig",
+      "Href": "aws-properties-cognito-userpool-admincreateuserconfig.html",
+      "Properties": [
+        {
+          "Name": "AllowAdminCreateUserOnly",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Set to True if only the administrator is allowed to create user\nprofiles. Set to False if users can sign themselves up via an app.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "InviteMessageTemplate",
+          "Type": "Amazon Cognito UserPool InviteMessageTemplate",
+          "TypeHref": "aws-properties-cognito-userpool-admincreateuserconfig-invitemessagetemplate.html",
+          "TypeName": "",
+          "DocString": "The message template to be used for the welcome message to new users.",
+          "SyntaxExpression": "MessageTemplateType"
+        },
+        {
+          "Name": "UnusedAccountValidityDays",
+          "Type": "Number",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The user account expiration limit, in days, after which the account is\nno longer usable. To reset the account after that time limit, you must\ncall AdminCreateUser again, specifying RESEND for the MessageAction\nparameter. The default value for this parameter is 7.",
+          "SyntaxExpression": "Number"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool DeviceConfiguration",
+      "Href": "aws-properties-cognito-userpool-deviceconfiguration.html",
+      "Properties": [
+        {
+          "Name": "ChallengeRequiredOnNewDevice",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Indicates whether a challenge is required on a new device. Only\napplicable to a new device.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "DeviceOnlyRememberedOnUserPrompt",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If true, a device is only remembered on user prompt.",
+          "SyntaxExpression": "Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool EmailConfiguration",
+      "Href": "aws-properties-cognito-userpool-emailconfiguration.html",
+      "Properties": [
+        {
+          "Name": "ReplyToEmailAddress",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The REPLY-TO email address.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SourceArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The Amazon Resource Name (ARN) of the email source.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool InviteMessageTemplate",
+      "Href": "aws-properties-cognito-userpool-invitemessagetemplate.html",
+      "Properties": [
+        {
+          "Name": "EmailMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The message template for email messages.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "EmailSubject",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The subject line for email messages.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SMSMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The message template for SMS messages.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool LambdaConfig",
+      "Href": "aws-properties-cognito-userpool-lambdaconfig.html",
+      "Properties": [
+        {
+          "Name": "CreateAuthChallenge",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Creates an authentication challenge.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "CustomMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A custom Message AWS Lambda trigger.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "DefineAuthChallenge",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Defines the authentication challenge.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "PostAuthentication",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A post-authentication AWS Lambda trigger.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "PostConfirmation",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A post-confirmation AWS Lambda trigger.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "PreAuthentication",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A pre-authentication AWS Lambda trigger.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "PreSignUp",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A pre-registration AWS Lambda trigger.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "VerifyAuthChallengeResponse",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Verifies the authentication challenge response.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool NumberAttributeConstraints",
+      "Href": "aws-properties-cognito-userpool-numberattributeconstraints.html",
+      "Properties": [
+        {
+          "Name": "MaxValue",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The maximum value of an attribute that is of the number data type.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MinValue",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The minimum value of an attribute that is of the number data type.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool PasswordPolicy",
+      "Href": "aws-properties-cognito-userpool-passwordpolicy.html",
+      "Properties": [
+        {
+          "Name": "MinimumLength",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The minimum length of the password policy that you have set. Cannot be\nless than 6.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "RequireLowercase",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "In the password policy that you have set, refers to whether you have\nrequired users to use at least one lowercase letter in their password.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "RequireNumbers",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "In the password policy that you have set, refers to whether you have\nrequired users to use at least one number in their password.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "RequireSymbols",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "In the password policy that you have set, refers to whether you have\nrequired users to use at least one symbol in their password.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "RequireUppercase",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "In the password policy that you have set, refers to whether you have\nrequired users to use at least one uppercase letter in their password.",
+          "SyntaxExpression": "Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool Policies",
+      "Href": "aws-properties-cognito-userpool-policies.html",
+      "Properties": [
+        {
+          "Name": "PasswordPolicy",
+          "Type": "Amazon Cognito UserPool PasswordPolicy",
+          "TypeHref": "aws-properties-cognito-userpool-passwordpolicy.html",
+          "TypeName": "",
+          "DocString": "Specifies information about the user pool password policy.",
+          "SyntaxExpression": "PasswordPolicy"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool SchemaAttribute",
+      "Href": "aws-properties-cognito-userpool-schemaattribute.html",
+      "Properties": [
+        {
+          "Name": "AttributeDataType",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The attribute data type. Can be one of the following: String, Number,\nDateTime, or Boolean.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "DeveloperOnlyAttribute",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies whether the attribute type is developer only.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "Mutable",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies whether the attribute can be changed once it has been\ncreated. True means mutable and False means immutable.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A schema attribute of the name type.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "NumberAttributeConstraints",
+          "Type": "Amazon Cognito UserPool NumberAttributeConstraints",
+          "TypeHref": "aws-properties-cognito-userpool-schemaattribute-numberattributeconstraints.html",
+          "TypeName": "",
+          "DocString": "Specifies the constraints for an attribute of the number type.",
+          "SyntaxExpression": "NumberAttributeConstraintsType"
+        },
+        {
+          "Name": "StringAttributeConstraints",
+          "Type": "Amazon Cognito UserPool StringAttributeConstraints",
+          "TypeHref": "aws-properties-cognito-userpool-schemaattribute-stringattributeconstraints.html",
+          "TypeName": "",
+          "DocString": "Specifies the constraints for an attribute of the string type.",
+          "SyntaxExpression": "StringAttributeConstraintsType"
+        },
+        {
+          "Name": "Required",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies whether a user pool attribute is required. If the attribute\nis required and the user does not provide a value, registration or\nsign-in will fail.",
+          "SyntaxExpression": "Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool SmsConfiguration",
+      "Href": "aws-properties-cognito-userpool-smsconfiguration.html",
+      "Properties": [
+        {
+          "Name": "ExternalId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The external ID used in IAM role trust relationships.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SnsCallerArn",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The Amazon Resource Name (ARN) of the Amazon Simple Notification\nService (SNS) caller.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool StringAttributeConstraints",
+      "Href": "aws-properties-cognito-userpool-stringattributeconstraints.html",
+      "Properties": [
+        {
+          "Name": "MaxLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The maximum value of an attribute that is of the number data type.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MinLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The minimum value of an attribute that is of the number data type.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPoolUser AttributeType",
+      "Href": "aws-properties-cognito-userpooluser-attributetype.html",
+      "Properties": [
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the attribute.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Value",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The value of the attribute.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool NumberAttributeConstraints",
+      "Href": "aws-properties-cognito-userpool-schemaattribute-numberattributeconstraints.html",
+      "Properties": [
+        {
+          "Name": "MaxLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The maximum length of an attribute value of the number type.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MinLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The minimum length of an attribute value of the number type.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool StringAttributeConstraints",
+      "Href": "aws-properties-cognito-userpool-schemaattribute-stringattributeconstraints.html",
+      "Properties": [
+        {
+          "Name": "MaxLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The maximum length of an attribute value of the string type.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MinLength",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The minimum length of an attribute value of the string type.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon Cognito UserPool InviteMessageTemplate",
+      "Href": "aws-properties-cognito-userpool-admincreateuserconfig-invitemessagetemplate.html",
+      "Properties": [
+        {
+          "Name": "EmailMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The message template for email messages.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "EmailSubject",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The subject line for email messages.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SMSMessage",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The message template for SMS messages.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
       "Name": "AWS Config ConfigRule Scope",
       "Href": "aws-properties-config-configrule-scope.html",
       "Properties": [
@@ -11969,6 +13353,14 @@
           "TypeHref": "",
           "TypeName": "",
           "DocString": "The source, such as an AWS service, that generate events, triggering\nAWS Config to evaluate your AWS resources. For valid values, see the\nSourceDetail data type in the AWS Config API Reference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "MaximumExecutionFrequency",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The frequency that you want AWS Config to run evaluations for a custom\nrule with a periodic trigger. By default, rules with a periodic\ntrigger are evaluated every 24 hours. If you specify a value for\nMaximumExecutionFrequency, then MessageType must use the\nScheduledNotification value.",
           "SyntaxExpression": "String"
         },
         {
@@ -13344,6 +14736,50 @@
       ]
     },
     {
+      "Name": "Amazon EC2 Container Service Service PlacementConstraint",
+      "Href": "aws-properties-ecs-service-placementconstraints-placementconstraint.html",
+      "Properties": [
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of constraint: distinctInstance or memberOf.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Expression",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A cluster query language expression to apply to the constraint. If the\nconstraint type is distinctInstance, you can't specify an expression.\nFor more information, see Cluster Query Language in the Amazon EC2\nContainer Service Developer Guide.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EC2 Container Service Service PlacementStrategies",
+      "Href": "aws-properties-ecs-service-placementstrategies-placementstrategy.html",
+      "Properties": [
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of placement strategy. Can be one of the following values:\nrandom, spread, or binpack.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Field",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The field to apply the placement strategy against. For the spread\nplacement strategy, valid values are instanceId (or host, which has\nthe same effect), or any platform or custom attribute that is applied\nto a container instance, such as attribute:ecs.availability-zone.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
       "Name": "Amazon EC2 Container Service Service LoadBalancers",
       "Href": "aws-properties-ecs-service-loadbalancers.html",
       "Properties": [
@@ -13770,6 +15206,28 @@
           "TypeName": "",
           "DocString": "Indicates whether the container can write to the volume. If you\nspecify true, the container has read-only access to the volume. If you\nspecify false, the container can write to the volume. By default, the\nvalue is false.",
           "SyntaxExpression": "Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EC2 Container Service Service PlacementConstraint",
+      "Href": "aws-properties-ecs-taskdefinition-placementconstraints-taskdefinitionplacementconstraint.html",
+      "Properties": [
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of constraint: distinctInstance or memberOf.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Expression",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A cluster query language expression to apply to the constraint. If the\nconstraint type is distinctInstance, you can't specify an expression.\nFor more information, see Cluster Query Language in the Amazon EC2\nContainer Service Developer Guide.",
+          "SyntaxExpression": "String"
         }
       ]
     },
@@ -14722,6 +16180,14 @@
       "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig.html",
       "Properties": [
         {
+          "Name": "AutoScalingPolicy",
+          "Type": "List of Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy",
+          "TypeHref": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy.html",
+          "TypeName": "",
+          "DocString": "An automatic scaling policy for a core instance group or task instance\ngroup in an Amazon EMR cluster. An automatic scaling policy defines\nhow an instance group dynamically adds and terminates Amazon EC2\ninstances in response to the value of a CloudWatch metric.",
+          "SyntaxExpression": "AutoScalingPolicy"
+        },
+        {
           "Name": "BidPrice",
           "Type": "String",
           "TypeHref": "",
@@ -14789,6 +16255,398 @@
           "TypeHref": "",
           "TypeName": "",
           "DocString": "The Amazon Elastic Compute Cloud (Amazon EC2) AZ for the job flow. For\nmore information, see\nhttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html\nin the Amazon EC2 User Guide for Linux Instances.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy.html",
+      "Properties": [
+        {
+          "Name": "Constraints",
+          "Type": "Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy Constraints ScalingConstraints",
+          "TypeHref": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingconstraints.html",
+          "TypeName": "",
+          "DocString": "The upper and lower Amazon EC2 instance limits for an automatic\nscaling policy. Automatic scaling activity will not cause an instance\ngroup to grow above or below these limits.",
+          "SyntaxExpression": "ScalingConstraints"
+        },
+        {
+          "Name": "Rules",
+          "Type": "Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy Constraints ScalingRule",
+          "TypeHref": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule.html",
+          "TypeName": "",
+          "DocString": "The scale-in and scale-out rules that comprise the automatic scaling\npolicy.",
+          "SyntaxExpression": "ScalingRule"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy Constraints ScalingConstraints",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingconstraints.html",
+      "Properties": [
+        {
+          "Name": "MaxCapacity",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The upper boundary of EC2 instances in an instance group beyond which\nscaling activities are not allowed to grow. Scale-out activities will\nnot add instances beyond this boundary.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "MinCapacity",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The lower boundary of EC2 instances in an instance group below which\nscaling activities are not allowed to shrink. Scale-in activities will\nnot terminate instances below this boundary.",
+          "SyntaxExpression": "Integer"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig AutoScalingPolicy Constraints ScalingRule",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule.html",
+      "Properties": [
+        {
+          "Name": "Action",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The conditions that trigger an automatic scaling activity.",
+          "SyntaxExpression": "ScalingAction"
+        },
+        {
+          "Name": "Description",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A friendly, more verbose description of the automatic scaling rule.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Name",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name used to identify an automatic scaling rule. Rule names must\nbe unique within a scaling policy.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Trigger",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The CloudWatch alarm definition that determines when automatic scaling\nactivity is triggered.",
+          "SyntaxExpression": "ScalingTrigger"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig ScalingAction",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingaction.html",
+      "Properties": [
+        {
+          "Name": "Market",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Not available for instance groups. Instance groups use the market type\nspecified for the group. Valid values: ON_DEMAND or SPOT.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SimpleScalingPolicyConfiguration",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of adjustment the automatic scaling activity makes when\ntriggered, and the periodicity of the adjustment.",
+          "SyntaxExpression": "SimpleScalingPolicyConfiguration"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig scalingtrigger",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingtrigger.html",
+      "Properties": [
+        {
+          "Name": "CloudWatchAlarmDefinition",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The definition of a CloudWatch metric alarm. When the defined alarm\nconditions are met along with other trigger parameters, scaling\nactivity begins.",
+          "SyntaxExpression": "CloudWatchAlarmDefinition"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig ScalingAction",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingaction-simplescalingpolicyconfiguration.html",
+      "Properties": [
+        {
+          "Name": "AdjustmentType",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The way in which EC2 instances are added (if ScalingAdjustment is a\npositive number) or terminated (if ScalingAdjustment is a negative\nnumber) each time the scaling activity is triggered.\nCHANGE_IN_CAPACITY is the default. CHANGE_IN_CAPACITY indicates that\nthe EC2 instance count increments or decrements by ScalingAdjustment,\nwhich should be expressed as an integer. PERCENT_CHANGE_IN_CAPACITY\nindicates the instance count increments or decrements by the\npercentage specified by ScalingAdjustment, which should be expressed\nas a decimal. For example, 0.20 indicates an increase in 20%\nincrements of cluster capacity. EXACT_CAPACITY indicates the scaling\nactivity results in an instance group with the number of EC2 instances\nspecified by ScalingAdjustment, which should be expressed as a\npositive integer.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "CoolDown",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The amount of time, in seconds, after a scaling activity completes\nbefore any further trigger-related scaling activities can start. The\ndefault value is 0.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "ScalingAdjustment",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The amount by which to scale in or scale out, based on the specified\nAdjustmentType. A positive value adds to the instance group's EC2\ninstance count while a negative number removes instances. If\nAdjustmentType is set to EXACT_CAPACITY, the number should only be a\npositive integer. If AdjustmentType is set to\nPERCENT_CHANGE_IN_CAPACITY, the value should express the percentage as\na decimal. For example, -0.20 indicates a decrease in 20% increments\nof cluster capacity.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster JobFlowInstancesConfig scalingtrigger",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingtrigger-cloudwatchalarmdefinition.html",
+      "Properties": [
+        {
+          "Name": "ComparisonOperator",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Determines how the metric specified by MetricName is compared to the\nvalue specified by Threshold.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Dimensions",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A CloudWatch metric dimension.",
+          "SyntaxExpression": "MetricDimension"
+        },
+        {
+          "Name": "EvaluationPeriods",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "he number of periods, expressed in seconds using Period, during which\nthe alarm condition must exist before the alarm triggers automatic\nscaling activity. The default value is 1.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "MetricName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the CloudWatch metric that is watched to determine an\nalarm condition.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Namespace",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The namespace for the CloudWatch metric. The default is\nAWS/ElasticMapReduce.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Period",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The period, in seconds, over which the statistic is applied. EMR\nCloudWatch metrics are emitted every five minutes (300 seconds), so if\nan EMR CloudWatch metric is specified, specify 300.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "Statistic",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The statistic to apply to the metric associated with the alarm. The\ndefault is AVERAGE.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Threshold",
+          "Type": "Double",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The value against which the specified statistic is compared.",
+          "SyntaxExpression": "Double"
+        },
+        {
+          "Name": "Unit",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The unit of measure associated with the CloudWatch metric being\nwatched. The value specified for Unit must correspond to the units\nspecified in the CloudWatch metric.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster MetricDimension",
+      "Href": "aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig-autoscalingpolicy-constraints-scalingrule-scalingtrigger-cloudwatchalarmdefinition-metricdimension.html",
+      "Properties": [
+        {
+          "Name": "Key",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The dimension name.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Value",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The dimension value.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster ScalingTrigger",
+      "Href": "aws-properties-elasticmapreduce-cluster-scalingtrigger.html",
+      "Properties": [
+        {
+          "Name": "CloudWatchAlarmDefinition",
+          "Type": "Amazon EMR Cluster CloudWatchAlarmDefinition",
+          "TypeHref": "aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html",
+          "TypeName": "",
+          "DocString": "The definition of a CloudWatch metric alarm. When the defined alarm\nconditions are met along with other trigger parameters, scaling\nactivity begins.",
+          "SyntaxExpression": "CloudWatchAlarmDefinition"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster ScalingAction",
+      "Href": "aws-properties-elasticmapreduce-cluster-scalingaction.html",
+      "Properties": [
+        {
+          "Name": "Market",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Not available for instance groups. Instance groups use the market type\nspecified for the group.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "SimpleScalingPolicyConfiguration",
+          "Type": "Amazon EMR Cluster SimpleScalingPolicyConfiguration",
+          "TypeHref": "aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html",
+          "TypeName": "",
+          "DocString": "The type of adjustment the automatic scaling activity makes when\ntriggered, and the periodicity of the adjustment.",
+          "SyntaxExpression": "SimpleScalingPolicyConfiguration"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster SimpleScalingPolicyConfiguration",
+      "Href": "aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html",
+      "Properties": [
+        {
+          "Name": "AdjustmentType",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The way in which Amazon EC2 instances are added (if ScalingAdjustment\nis a positive number) or terminated (if ScalingAdjustment is a\nnegative number) each time the scaling activity is triggered.\nCHANGE_IN_CAPACITY is the default.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "CoolDown",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The amount of time, in seconds, after a scaling activity completes\nbefore any further trigger-related scaling activities can start. The\ndefault value is 0.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "ScalingAdjustment",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The amount by which to scale in or scale out, based on the specified\nAdjustmentType. A positive value adds to the instance group's Amazon\nEC2 instance count while a negative number removes instances. If\nAdjustmentType is set to EXACT_CAPACITY, the number should only be a\npositive integer. If AdjustmentType is set to\nPERCENT_CHANGE_IN_CAPACITY, the value should express the percentage as\na decimal.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "Amazon EMR Cluster CloudWatchAlarmDefinition",
+      "Href": "aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html",
+      "Properties": [
+        {
+          "Name": "ComparisonOperator",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Determines how the metric specified by MetricName is compared to the\nvalue specified by Threshold.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Dimensions",
+          "Type": "",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "A CloudWatch metric dimension.",
+          "SyntaxExpression": "MetricDimension"
+        },
+        {
+          "Name": "EvaluationPeriods",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "he number of periods, expressed in seconds using Period, during which\nthe alarm condition must exist before the alarm triggers automatic\nscaling activity. The default value is 1.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "MetricName",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The name of the CloudWatch metric that is watched to determine an\nalarm condition.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Namespace",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The namespace for the CloudWatch metric. The default is\nAWS/ElasticMapReduce.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Period",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The period, in seconds, over which the statistic is applied. EMR\nCloudWatch metrics are emitted every five minutes (300 seconds), so if\nan EMR CloudWatch metric is specified, specify 300.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "Statistic",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The statistic to apply to the metric associated with the alarm. The\ndefault is AVERAGE.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Threshold",
+          "Type": "Double",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The value against which the specified statistic is compared.",
+          "SyntaxExpression": "Double"
+        },
+        {
+          "Name": "Unit",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The unit of measure associated with the CloudWatch metric being\nwatched. The value specified for Unit must correspond to the units\nspecified in the CloudWatch metric.",
           "SyntaxExpression": "String"
         }
       ]
@@ -16020,13 +17878,13 @@
           "Type": "String",
           "TypeHref": "",
           "TypeName": "",
-          "DocString": "For nodejs4.3 and python2.7 runtime environments, the source code of\nyour Lambda function. You can't use this property with other runtime\nenvironments.",
+          "DocString": "For nodejs4.3, nodejs6.10, python2.7, and python3.6 runtime\nenvironments, the source code of your Lambda function. You can't use\nthis property with other runtime environments.",
           "SyntaxExpression": "String"
         }
       ]
     },
     {
-      "Name": "AWS Lambda Function VPCConfig",
+      "Name": "AWS Lambda Function VpcConfig",
       "Href": "aws-properties-lambda-function-vpcconfig.html",
       "Properties": [
         {
@@ -18128,6 +19986,318 @@
           "TypeHref": "",
           "TypeName": "",
           "DocString": "The ID of an AWS WAF rule to associate with a web ACL.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional ByteMatchSet ByteMatchTuples",
+      "Href": "aws-properties-wafregional-bytematchset-bytematchtuples.html",
+      "Properties": [
+        {
+          "Name": "FieldToMatch",
+          "Type": "AWS WAF Regional ByteMatchSet ByteMatchTuples FieldToMatch",
+          "TypeHref": "aws-properties-wafregional-bytematchset-bytematchtuples-fieldtomatch.html",
+          "TypeName": "",
+          "DocString": "The part of a web request that you want AWS WAF to search, such as a\nspecific header or a query string.",
+          "SyntaxExpression": "Field to match"
+        },
+        {
+          "Name": "PositionalConstraint",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "How AWS WAF finds matches within the part of the web request in which\nyou are searching. For valid values, see the PositionalConstraint\ncontent for the ByteMatchTuple data type in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "TargetString",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The value that AWS WAF searches for. AWS CloudFormation encodes in\nbase64 this value before sending it to AWS WAF.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "TargetStringBase64",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The base64-encoded value that AWS WAF searches for. AWS CloudFormation\nsends this value to AWS WAF without encoding it.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "TextTransformation",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies how AWS WAF processes the target string value. Text\ntransformations eliminate some of the unusual formatting that\nattackers use in web requests in an effort to bypass AWS WAF. If you\nspecify a transformation, AWS WAF transforms the target string value\nbefore inspecting a web request for a match.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional ByteMatchSet ByteMatchTuples FieldToMatch",
+      "Href": "aws-properties-wafregional-bytematchset-bytematchtuples-fieldtomatch.html",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If you specify HEADER for the Type property, the name of the header\nthat AWS WAF searches for, such as User-Agent or Referer. If you\nspecify any other value for the Type property, do not specify this\nproperty.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The part of the web request in which AWS WAF searches for the target\nstring. For valid values, see FieldToMatch in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional IPSet IPSetDescriptors",
+      "Href": "aws-properties-wafregional-ipset-ipsetdescriptors.html",
+      "Properties": [
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The IP address type, such as IPV4. For valid values, see the Type\ncontents of the IPSetDescriptor data type in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Value",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "An IP address (in CIDR notation) that AWS WAF permits, blocks, or\ncounts. For example, to specify a single IP address such as\n192.0.2.44, specify 192.0.2.44/32. To specify a range of IP addresses\nsuch as 192.0.2.0 to 192.0.2.255, specify 192.0.2.0/24.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional Rule Predicates",
+      "Href": "aws-properties-wafregional-rule-predicates.html",
+      "Properties": [
+        {
+          "Name": "DataId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The unique identifier of a predicate, such as the ID of a ByteMatchSet\nor IPSet.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Negated",
+          "Type": "Boolean",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Whether to use the settings or the negated settings that you specified\nin the ByteMatchSet, IPSet, SizeConstraintSet, SqlInjectionMatchSet,\nor XssMatchSet objects.",
+          "SyntaxExpression": "Boolean"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of predicate in a rule, such as an IPSet (IPMatch). For valid\nvalues, see the Type contents of the Predicate data type in the AWS\nWAF Regional API Reference.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional SizeConstraintSet SizeConstraint",
+      "Href": "aws-properties-wafregional-sizeconstraintset-sizeconstraint.html",
+      "Properties": [
+        {
+          "Name": "ComparisonOperator",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The type of comparison that you want AWS WAF to perform. AWS WAF uses\nthis value in combination with the Size and FieldToMatch property\nvalues to check if the size constraint is a match. For more\ninformation and valid values, see the ComparisonOperator content for\nthe SizeConstraint data type in the AWS WAF Regional API Reference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "FieldToMatch",
+          "Type": "AWS WAF Regional SizeConstraintSet SizeConstraint FieldToMatch",
+          "TypeHref": "aws-properties-wafregional-sizeconstraintset-sizeconstraint-fieldtomatch.html",
+          "TypeName": "",
+          "DocString": "The part of a web request that you want AWS WAF to search, such as a\nspecific header or a query string.",
+          "SyntaxExpression": "Field to match"
+        },
+        {
+          "Name": "Size",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The size in bytes that you want AWS WAF to compare against the size of\nthe specified FieldToMatch. AWS WAF uses Size in combination with the\nComparisonOperator and FieldToMatch property values to check if the\nsize constraint of a web request is a match. For more information and\nvalid values, see the Size content for the SizeConstraint data type in\nthe AWS WAF Regional API Reference.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "TextTransformation",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies how AWS WAF processes the FieldToMatch property before\ninspecting a request for a match. Text transformations eliminate some\nof the unusual formatting that attackers use in web requests in an\neffort to bypass AWS WAF. If you specify a transformation, AWS WAF\ntransforms the FieldToMatch before inspecting a web request for a\nmatch.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional SizeConstraintSet SizeConstraint FieldToMatch",
+      "Href": "aws-properties-wafregional-sizeconstraintset-sizeconstraint-fieldtomatch.html",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If you specify HEADER for the Type property, the name of the header\nthat AWS WAF searches for, such as User-Agent or Referer. If you\nspecify any other value for the Type property, do not specify this\nproperty.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The part of the web request in which AWS WAF searches for the target\nstring. For valid values, see FieldToMatch in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples",
+      "Href": "aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples.html",
+      "Properties": [
+        {
+          "Name": "FieldToMatch",
+          "Type": "AWS WAF Regional ByteMatchSet ByteMatchTuples FieldToMatch",
+          "TypeHref": "aws-properties-wafregional-bytematchset-bytematchtuples-fieldtomatch.html",
+          "TypeName": "",
+          "DocString": "The part of a web request that you want AWS WAF to search, such as a\nspecific header or a query string.",
+          "SyntaxExpression": "Field to match"
+        },
+        {
+          "Name": "TextTransformation",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies how AWS WAF processes the FieldToMatch property before\ninspecting a request for a match.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional SqlInjectionMatchSet SqlInjectionMatchTuples FieldToMatch",
+      "Href": "aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples-fieldtomatch.html",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If you specify HEADER for the Type property, the name of the header\nthat AWS WAF searches for, such as User-Agent or Referer. If you\nspecify any other value for the Type property, do not specify this\nproperty.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The part of the web request in which AWS WAF searches for the target\nstring. For valid values, see FieldToMatch in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional XssMatchSet XssMatchTuple",
+      "Href": "aws-properties-wafregional-xssmatchset-xssmatchtuple.html",
+      "Properties": [
+        {
+          "Name": "FieldToMatch",
+          "Type": "AWS WAF Regional XssMatchSet XssMatchTuple FieldToMatch",
+          "TypeHref": "aws-properties-wafregional-xssmatchset-xssmatchtuple-fieldtomatch.html",
+          "TypeName": "",
+          "DocString": "The part of a web request that you want AWS WAF to search, such as a\nspecific header or a query string.",
+          "SyntaxExpression": "Field to match"
+        },
+        {
+          "Name": "TextTransformation",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "Specifies how AWS WAF processes the FieldToMatch property before\ninspecting a request for a match. Text transformations eliminate some\nof the unusual formatting that attackers use in web requests in an\neffort to bypass AWS WAF. If you specify a transformation, AWS WAF\ntransforms theFieldToMatch parameter before inspecting a web request\nfor a match.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional XssMatchSet XssMatchTuple FieldToMatch",
+      "Href": "aws-properties-wafregional-xssmatchset-xssmatchtuple-fieldtomatch.html",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "If you specify HEADER for the Type property, the name of the header\nthat AWS WAF searches for, such as User-Agent or Referer. If you\nspecify any other value for the Type property, do not specify this\nproperty.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The part of the web request in which AWS WAF searches for the target\nstring. For valid values, see FieldToMatch in the AWS WAF Regional API\nReference.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional WebACL Action",
+      "Href": "aws-properties-wafregional-webacl-action.html",
+      "Properties": [
+        {
+          "Name": "Type",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "For actions that are associated with a rule, the action that AWS WAF\ntakes when a web request matches all conditions in a rule.",
+          "SyntaxExpression": "String"
+        }
+      ]
+    },
+    {
+      "Name": "AWS WAF Regional WebACL Rules",
+      "Href": "aws-properties-wafregional-webacl-rules.html",
+      "Properties": [
+        {
+          "Name": "Action",
+          "Type": "AWS WAF Regional WebACL Action",
+          "TypeHref": "aws-properties-wafregional-webacl-action.html",
+          "TypeName": "",
+          "DocString": "The action that Amazon CloudFront (CloudFront) or AWS WAF takes when a\nweb request matches all conditions in the rule, such as allow, block,\nor count the request.",
+          "SyntaxExpression": "String"
+        },
+        {
+          "Name": "Priority",
+          "Type": "Integer",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The order in which AWS WAF evaluates the rules in a web ACL. AWS WAF\nevaluates rules with a lower value before rules with a higher value.\nThe value must be a unique integer. If you have multiple rules in a\nweb ACL, the priority numbers do not need to be consecutive.",
+          "SyntaxExpression": "Integer"
+        },
+        {
+          "Name": "RuleId",
+          "Type": "String",
+          "TypeHref": "",
+          "TypeName": "",
+          "DocString": "The ID of an AWS WAF Regional rule to associate with a web ACL.",
           "SyntaxExpression": "String"
         }
       ]
